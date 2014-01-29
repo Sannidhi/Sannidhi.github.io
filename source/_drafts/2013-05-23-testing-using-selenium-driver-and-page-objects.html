@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Testing using Selenium driver and Page Objects"
+date: 2013-05-23
+comments: false
+---
+
+<div class='post'>
+<br />I am a developer, but on a recent project I got a chance to double my role as a tester. This was a great learning experience as I had never really written integration or functional tests. At this point, I got introduced to another Thoughtworker - tester and former dev Robin (Thanks MJ!) who helped my think like a QA. Heres what I learnt:<br /><br />Selenium is a Firefox Pluggin which records your movement as you manually test certain parts of your website. These recordings can be imported into a Java/PHP/Phython/Ruby/C# test case and can be played back to test the scenarios over and over again, without manual intervention.<br /><br />However, these test cases were not exactly good enough to be directly adapted into the production code. This is when Robin introduced me to page objects.<br /><br />A Page Object can be thought of as a model of a webpage say "x". This page will know everything about the elements and properties of the page, but does not have anything to do with the tests. The tests will contain the assertions and the test logic; it uses the page object to first create the elements it will be testing.<br /><br />Let me take an example - Consider a simple web form on an e-commerce site, that needs to be tested. Let it contain two parts - Shipping information and Billing information. A page object for this page will be created lets say "FormPage" with the elements present in both the parts.<br /><br /><br /></div>

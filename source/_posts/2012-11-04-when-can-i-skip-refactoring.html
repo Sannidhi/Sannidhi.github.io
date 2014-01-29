@@ -1,0 +1,9 @@
+---
+layout: post
+title: "When can I skip refactoring? "
+date: 2012-11-04
+comments: false
+---
+
+<div class='post'>
+In my previous post, I wrote about the importance of refactoring. However, there are a few times when it could be avoided:<br /><br /><b>Spiking</b> - A spike is a process in which team members get familiar with a particular technology/requirement that is going to be used in the software development. The code which is written during this process may not be used in the actual production and we can safely skip the refactoring process here. However, if for some reason, the code does get included in the actual production, it is important to go back and refactor it.<br /><br /><b>Prototyping</b> - A prototype is a sample model shown to the client, generally to get feedback on the look and feel of the product before the actual development. The code written for this purpose will not be used and hence is safe to be discarded after the review. Thus, if a piece of code is not going to last a long time and is for experimental process, the refactoring step can be skipped.<br /><br /><b>Continuously</b>&nbsp;<b>changing</b> <b>code</b> - When I interned at a start-up I worked on a piece of 'search' feature whose requirements changed too frequently. Since it was a startup, the development life cycle of a feature was quite small too. Until the requirements become stable, it is alright not to refactor code which is going to be replaced in anyway.<br /><br />In spite of such special cases, it is important to stress the importance of refactoring so that the development team does not get comfortable to write code without this step. In some situations, refactoring might be essential to the above mentioned scenarios too. Hence every case should be studied against the domain to make the right call.</div>
