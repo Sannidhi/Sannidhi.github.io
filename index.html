@@ -9,7 +9,7 @@
   <meta name="author" content="Sannidhi">
 
   
-  <meta name="description" content="Thank you Scott for giving me this idea. There are many resolutions I make in my head, but to put them down and try to stick to SMART as much as &hellip;">
+  <meta name="description" content="Problem Finalizer are used to destroy the objects not being used. (Ex: foo.finalize()). JVM does not guarantee that the finalizer will be even called &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -63,6 +63,69 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/16/why-not-to-use-finalizers/">Why Not to Use Finalizers</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-16T00:13:51-08:00" pubdate data-updated="true">Feb 16<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Problem</h3>
+
+<p>Finalizer are used to destroy the objects not being used. (Ex: foo.finalize()). JVM does not guarantee that the finalizer will be even called or not + even if it IS called on the object, the finalizer is implemented in such a way that during the object destruction, if an exception is thrown, it is not caught &ndash; in fact it might just be ignored and the process exits abruptly. Thus, the object might remain in a corrupt state for a long time and not get destroyed at all.</p>
+
+<h3>Solution</h3>
+
+<p>Not using finalizers is the best option to make sure the problems are avoided. If finalizers are used for critical operations like closing a database connection, then the program can come to a grinding halt.</p>
+
+<p> The garbage collection should get around destroying unreferenced objects, however if there is a need to destroy anything on its own, defining an explicit termination method will be the best option. Also, in the try-catch-finally code, the finally block will be executed no matter what. Hence, if the termination method is put into this block, it will get executed immediately after try/catch.</p>
+
+<p>ex:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>  <span class="c1">// Some code here</span>
+</span><span class='line'><span class="o">}</span> <span class="k">catch</span> <span class="o">{</span>
+</span><span class='line'>  <span class="c1">// Handle exception</span>
+</span><span class='line'><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">foo</span><span class="o">.</span><span class="na">terminate</span><span class="o">();</span> <span class="c1">// explicit termination of object </span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -410,6 +473,10 @@ If you look up the word &#8216;Developer&#8217; it says : One who programs compu
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/16/why-not-to-use-finalizers/">Why Not to Use Finalizers</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/01/28/developer-resolutions-for-2013/">Developer Resolutions for 2013</a>
       </li>
     
@@ -423,10 +490,6 @@ If you look up the word &#8216;Developer&#8217; it says : One who programs compu
     
       <li class="post">
         <a href="/blog/2012/11/04/when-can-i-skip-refactoring/">When Can I Skip Refactoring?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/04/refactoring-for-those-code-smells/">Refactoring for Those Code Smells</a>
       </li>
     
   </ul>

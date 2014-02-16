@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Java | Binary Musings]]></title>
+  <link href="http://Sannidhi.github.io/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://Sannidhi.github.io/"/>
+  <updated>2014-02-16T00:18:05-08:00</updated>
+  <id>http://Sannidhi.github.io/</id>
+  <author>
+    <name><![CDATA[Sannidhi]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Why Not to Use Finalizers]]></title>
+    <link href="http://Sannidhi.github.io/blog/2014/02/16/why-not-to-use-finalizers/"/>
+    <updated>2014-02-16T00:13:51-08:00</updated>
+    <id>http://Sannidhi.github.io/blog/2014/02/16/why-not-to-use-finalizers</id>
+    <content type="html"><![CDATA[<h3>Problem</h3>
+
+<p>Finalizer are used to destroy the objects not being used. (Ex: foo.finalize()). JVM does not guarantee that the finalizer will be even called or not + even if it IS called on the object, the finalizer is implemented in such a way that during the object destruction, if an exception is thrown, it is not caught &ndash; in fact it might just be ignored and the process exits abruptly. Thus, the object might remain in a corrupt state for a long time and not get destroyed at all.</p>
+
+<h3>Solution</h3>
+
+<p>Not using finalizers is the best option to make sure the problems are avoided. If finalizers are used for critical operations like closing a database connection, then the program can come to a grinding halt.</p>
+
+<p> The garbage collection should get around destroying unreferenced objects, however if there is a need to destroy anything on its own, defining an explicit termination method will be the best option. Also, in the try-catch-finally code, the finally block will be executed no matter what. Hence, if the termination method is put into this block, it will get executed immediately after try/catch.</p>
+
+<p>ex:</p>
+
+<p>```java
+try {</p>
+
+<pre><code>// Some code here
+</code></pre>
+
+<p>} catch {</p>
+
+<pre><code>// Handle exception
+</code></pre>
+
+<p>} finally {</p>
+
+<pre><code>foo.terminate(); // explicit termination of object 
+</code></pre>
+
+<p>}
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

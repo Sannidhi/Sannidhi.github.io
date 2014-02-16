@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>When Can I Skip Refactoring? - Binary Musings</title>
+  <title>Why Not to Use Finalizers - Binary Musings</title>
   <meta name="author" content="Sannidhi">
 
   
-  <meta name="description" content="In my previous post, I wrote about the importance of refactoring. However, there are a few times when it could be avoided:Spiking - A spike is a &hellip;">
+  <meta name="description" content="Problem Finalizer are used to destroy the objects not being used. (Ex: foo.finalize()). JVM does not guarantee that the finalizer will be even called &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://Sannidhi.github.io/blog/2012/11/04/when-can-i-skip-refactoring">
+  <link rel="canonical" href="http://Sannidhi.github.io/blog/2014/02/16/why-not-to-use-finalizers">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Binary Musings" type="application/atom+xml">
@@ -66,7 +66,7 @@
   
   <header>
     
-      <h1 class="entry-title">When Can I Skip Refactoring?</h1>
+      <h1 class="entry-title">Why Not to Use Finalizers</h1>
     
     
       <p class="meta">
@@ -82,15 +82,41 @@
   
 
 
-<time datetime="2012-11-04T00:00:00-07:00" pubdate data-updated="true">Nov 4<span>th</span>, 2012</time>
+<time datetime="2014-02-16T00:13:51-08:00" pubdate data-updated="true">Feb 16<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><div class='post'>
-In my previous post, I wrote about the importance of refactoring. However, there are a few times when it could be avoided:<br /><br /><b>Spiking</b> - A spike is a process in which team members get familiar with a particular technology/requirement that is going to be used in the software development. The code which is written during this process may not be used in the actual production and we can safely skip the refactoring process here. However, if for some reason, the code does get included in the actual production, it is important to go back and refactor it.<br /><br /><b>Prototyping</b> - A prototype is a sample model shown to the client, generally to get feedback on the look and feel of the product before the actual development. The code written for this purpose will not be used and hence is safe to be discarded after the review. Thus, if a piece of code is not going to last a long time and is for experimental process, the refactoring step can be skipped.<br /><br /><b>Continuously</b>&nbsp;<b>changing</b> <b>code</b> - When I interned at a start-up I worked on a piece of &#8216;search&#8217; feature whose requirements changed too frequently. Since it was a startup, the development life cycle of a feature was quite small too. Until the requirements become stable, it is alright not to refactor code which is going to be replaced in anyway.<br /><br />In spite of such special cases, it is important to stress the importance of refactoring so that the development team does not get comfortable to write code without this step. In some situations, refactoring might be essential to the above mentioned scenarios too. Hence every case should be studied against the domain to make the right call.</div>
+<div class="entry-content"><h3>Problem</h3>
+
+<p>Finalizer are used to destroy the objects not being used. (Ex: foo.finalize()). JVM does not guarantee that the finalizer will be even called or not + even if it IS called on the object, the finalizer is implemented in such a way that during the object destruction, if an exception is thrown, it is not caught &ndash; in fact it might just be ignored and the process exits abruptly. Thus, the object might remain in a corrupt state for a long time and not get destroyed at all.</p>
+
+<h3>Solution</h3>
+
+<p>Not using finalizers is the best option to make sure the problems are avoided. If finalizers are used for critical operations like closing a database connection, then the program can come to a grinding halt.</p>
+
+<p> The garbage collection should get around destroying unreferenced objects, however if there is a need to destroy anything on its own, defining an explicit termination method will be the best option. Also, in the try-catch-finally code, the finally block will be executed no matter what. Hence, if the termination method is put into this block, it will get executed immediately after try/catch.</p>
+
+<p>ex:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>  <span class="c1">// Some code here</span>
+</span><span class='line'><span class="o">}</span> <span class="k">catch</span> <span class="o">{</span>
+</span><span class='line'>  <span class="c1">// Handle exception</span>
+</span><span class='line'><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">foo</span><span class="o">.</span><span class="na">terminate</span><span class="o">();</span> <span class="c1">// explicit termination of object </span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
 </div>
 
 
@@ -113,15 +139,21 @@ In my previous post, I wrote about the importance of refactoring. However, there
   
 
 
-<time datetime="2012-11-04T00:00:00-07:00" pubdate data-updated="true">Nov 4<span>th</span>, 2012</time>
+<time datetime="2014-02-16T00:13:51-08:00" pubdate data-updated="true">Feb 16<span>th</span>, 2014</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/java/'>Java</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://Sannidhi.github.io/blog/2012/11/04/when-can-i-skip-refactoring/" data-via="" data-counturl="http://Sannidhi.github.io/blog/2012/11/04/when-can-i-skip-refactoring/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://Sannidhi.github.io/blog/2014/02/16/why-not-to-use-finalizers/" data-via="" data-counturl="http://Sannidhi.github.io/blog/2014/02/16/why-not-to-use-finalizers/" >Tweet</a>
   
   
   
@@ -130,10 +162,8 @@ In my previous post, I wrote about the importance of refactoring. However, there
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/11/04/refactoring-for-those-code-smells/" title="Previous Post: Refactoring for those code smells ">&laquo; Refactoring for those code smells </a>
+        <a class="basic-alignment left" href="/blog/2013/01/28/developer-resolutions-for-2013/" title="Previous Post: Developer Resolutions for 2013 ">&laquo; Developer Resolutions for 2013 </a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/11/19/continuous-integration/" title="Next Post: Continuous Integration ">Continuous Integration  &raquo;</a>
       
     </p>
   </footer>
