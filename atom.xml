@@ -4,7 +4,7 @@
   <title><![CDATA[Binary Musings]]></title>
   <link href="http://Sannidhi.github.io/atom.xml" rel="self"/>
   <link href="http://Sannidhi.github.io/"/>
-  <updated>2014-02-16T00:40:42-08:00</updated>
+  <updated>2014-02-16T01:17:28-08:00</updated>
   <id>http://Sannidhi.github.io/</id>
   <author>
     <name><![CDATA[Sannidhi]]></name>
@@ -131,9 +131,23 @@ My first brush with Test Driven Development (TDD) methodology is at ThoughtWorks
     <link href="http://Sannidhi.github.io/blog/2012/10/15/the-really-simple-rules-for-great-design/"/>
     <updated>2012-10-15T00:00:00-07:00</updated>
     <id>http://Sannidhi.github.io/blog/2012/10/15/the-really-simple-rules-for-great-design</id>
-    <content type="html"><![CDATA[<div class='post'>
-If you look up the word &#8216;Developer&#8217; it says : One who programs computers to match the requirements of a given problem. I used to perfectly fit into this definition until I learnt the simple rules of design.<br /><div><br /></div><div>I have never been an artistic person but now I have a compulsive need for my code to look beautiful. I have started abiding by these set of rules and the code looks better, is easier to understand and the best part is it is so freaking &#8216;simple&#8217;! <br /><div></div><div>For every little program you write just go over <b>these simple rules</b>:&nbsp;</div><div><br /></div><div><b>It should pass all tests </b>- This is to make sure your program does what its supposed to. (If you don&#8217;t have any tests, Stop reading further - Run to your computer write some tests and I&#8217;ll see you in a bit)&nbsp;</div><div><br /></div><div><b>It should reveal all intentions</b> - Does your add method do exactly (and only) that? Add?&nbsp;</div><div><br /></div><div><b>No duplication</b> - Extract common statements into methods, use setup() for test cases : do what it takes.&nbsp;</div><div><br /></div><div><b>Fewest number of classes and methods</b> - I closely relate this to another rule &#8220;YAGNI&#8221; an acronym for &#8216;You aren&#8217;t gonna need it&#8217;. Cluttering the code with far too many classes will make it difficult to maintain.&nbsp;</div><div><br /></div><div>This list is not exhaustive and good design is a far lengthy topic of discussion but if you have these 4 check boxes ticked and you write decent code it will be a great step 1 to having a robust design for your application.&nbsp;</div></div></div>
-]]></content>
+    <content type="html"><![CDATA[After learning best practices of good design, I have a compulsive need for my code to be aesthetic. I have started abiding by these set of rules and the code looks better, is easier to understand and the best part is it comes effortlessly after you get the hang of it. For every little program I go over these simple rules:<br><br>
+<ul>
+<li>
+<b>It should pass all tests </b>- This is to make sure my program does what its intention is. If I am refactoring legacy code, then I will start by writing tests around the part I am trying to refactor.
+</li>
+<li>
+<b>It should reveal all intentions</b> - Does my &#8216;add&#8217; method do exactly and only that? Add?
+</li>
+<li>
+<b>No duplication</b> - Basic rule of DRY.
+</li>
+<li>
+<b>Fewest number of classes and methods</b> - I closely relate this to another rule &#8220;YAGNI&#8221; an acronym for &#8216;You aren&#8217;t gonna need it&#8217;. Cluttering the code with far too many classes will make it difficult to maintain.
+</li>
+</ul>
+
+This list is not exhaustive and there are many more factors like domain specific modeling etc that go into making a good design. However, these are the basic ones I put on my checklist.]]></content>
   </entry>
   
 </feed>
