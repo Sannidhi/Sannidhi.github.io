@@ -9,7 +9,7 @@
   <meta name="author" content="Sannidhi">
 
   
-  <meta name="description" content="Problem Finalizer are used to destroy the objects not being used. (Ex: foo.finalize()). JVM does not guarantee that the finalizer will be even called &hellip;">
+  <meta name="description" content="Problem For an array based implementation of a stack, the stack will be &lsquo;expanded&rsquo; usually by doubling the size of an array when the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -63,6 +63,50 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/16/memory-leaks-in-data-structures/">Memory Leaks in Data Structures</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-16T00:27:38-08:00" pubdate data-updated="true">Feb 16<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Problem</h3>
+
+<p>For an array based implementation of a stack, the stack will be &lsquo;expanded&rsquo; usually by doubling the size of an array when the stack is about to get full. When elements are popped out of the stack, the garbage collector should collect the space used by the objects popped. However, there exists an &lsquo;obsolete reference&rsquo; from the stack to ALL the elements even when they are popped. As a result, the garbage collector never cleans this memory. This scenario is called a memory leak.</p>
+
+<h3>Solution</h3>
+
+<p>When there is a scenario where memory is being user-manipulated in the code, the obsolete references if any should be identified and terminated. For example, in the above example making the popped object = null, will make sure all the references are removed and memory is freed.</p>
+
+<p>Sometimes objects can be forgotten in the cache or ignored and they will never get garbage collected causing memory leaks. A solution is to use a WeakHashMap which checks for &lsquo;keys&rsquo; not accessed for a long time and removes them.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -399,6 +443,10 @@ If you look up the word &#8216;Developer&#8217; it says : One who programs compu
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/16/memory-leaks-in-data-structures/">Memory Leaks in Data Structures</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/16/why-not-to-use-finalizers/">Why Not to Use Finalizers</a>
       </li>
     
@@ -412,10 +460,6 @@ If you look up the word &#8216;Developer&#8217; it says : One who programs compu
     
       <li class="post">
         <a href="/blog/2012/11/19/continuous-integration/">Continuous Integration</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/04/when-can-i-skip-refactoring/">When Can I Skip Refactoring?</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Java | Binary Musings]]></title>
   <link href="http://Sannidhi.github.io/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://Sannidhi.github.io/"/>
-  <updated>2014-02-16T00:23:27-08:00</updated>
+  <updated>2014-02-16T00:40:42-08:00</updated>
   <id>http://Sannidhi.github.io/</id>
   <author>
     <name><![CDATA[Sannidhi]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Memory Leaks in Data Structures]]></title>
+    <link href="http://Sannidhi.github.io/blog/2014/02/16/memory-leaks-in-data-structures/"/>
+    <updated>2014-02-16T00:27:38-08:00</updated>
+    <id>http://Sannidhi.github.io/blog/2014/02/16/memory-leaks-in-data-structures</id>
+    <content type="html"><![CDATA[<h3>Problem</h3>
+
+<p>For an array based implementation of a stack, the stack will be &lsquo;expanded&rsquo; usually by doubling the size of an array when the stack is about to get full. When elements are popped out of the stack, the garbage collector should collect the space used by the objects popped. However, there exists an &lsquo;obsolete reference&rsquo; from the stack to ALL the elements even when they are popped. As a result, the garbage collector never cleans this memory. This scenario is called a memory leak.</p>
+
+<h3>Solution</h3>
+
+<p>When there is a scenario where memory is being user-manipulated in the code, the obsolete references if any should be identified and terminated. For example, in the above example making the popped object = null, will make sure all the references are removed and memory is freed.</p>
+
+<p>Sometimes objects can be forgotten in the cache or ignored and they will never get garbage collected causing memory leaks. A solution is to use a WeakHashMap which checks for &lsquo;keys&rsquo; not accessed for a long time and removes them.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Why Not to Use Finalizers]]></title>
