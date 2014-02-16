@@ -4,7 +4,7 @@
   <title><![CDATA[Binary Musings]]></title>
   <link href="http://Sannidhi.github.io/atom.xml" rel="self"/>
   <link href="http://Sannidhi.github.io/"/>
-  <updated>2014-02-16T00:18:05-08:00</updated>
+  <updated>2014-02-16T00:23:27-08:00</updated>
   <id>http://Sannidhi.github.io/</id>
   <author>
     <name><![CDATA[Sannidhi]]></name>
@@ -116,26 +116,6 @@ My first brush with Test Driven Development (TDD) methodology is at ThoughtWorks
     <id>http://Sannidhi.github.io/blog/2012/10/15/the-really-simple-rules-for-great-design</id>
     <content type="html"><![CDATA[<div class='post'>
 If you look up the word &#8216;Developer&#8217; it says : One who programs computers to match the requirements of a given problem. I used to perfectly fit into this definition until I learnt the simple rules of design.<br /><div><br /></div><div>I have never been an artistic person but now I have a compulsive need for my code to look beautiful. I have started abiding by these set of rules and the code looks better, is easier to understand and the best part is it is so freaking &#8216;simple&#8217;! <br /><div></div><div>For every little program you write just go over <b>these simple rules</b>:&nbsp;</div><div><br /></div><div><b>It should pass all tests </b>- This is to make sure your program does what its supposed to. (If you don&#8217;t have any tests, Stop reading further - Run to your computer write some tests and I&#8217;ll see you in a bit)&nbsp;</div><div><br /></div><div><b>It should reveal all intentions</b> - Does your add method do exactly (and only) that? Add?&nbsp;</div><div><br /></div><div><b>No duplication</b> - Extract common statements into methods, use setup() for test cases : do what it takes.&nbsp;</div><div><br /></div><div><b>Fewest number of classes and methods</b> - I closely relate this to another rule &#8220;YAGNI&#8221; an acronym for &#8216;You aren&#8217;t gonna need it&#8217;. Cluttering the code with far too many classes will make it difficult to maintain.&nbsp;</div><div><br /></div><div>This list is not exhaustive and good design is a far lengthy topic of discussion but if you have these 4 check boxes ticked and you write decent code it will be a great step 1 to having a robust design for your application.&nbsp;</div></div></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Passion Begins]]></title>
-    <link href="http://Sannidhi.github.io/blog/2012/10/14/the-passion-begins/"/>
-    <updated>2012-10-14T00:00:00-07:00</updated>
-    <id>http://Sannidhi.github.io/blog/2012/10/14/the-passion-begins</id>
-    <content type="html"><![CDATA[<div class='post'>
-<br /><div class="p1">TWU continued on to week 2 and I joined the bootcamp for developers. I met other trainers - Nigel, Amir, Alok (Luka/Heroku) :) and I realized as the time passed that all TWers have one thing in common : They are awesomely&nbsp;brilliant!&nbsp;</div><div class="p2"><br /></div><div class="p1">Yeah, it was intimidating.. My first internship I had a feeling (yes, it was true :P) that I was smarter than most people over there. For some it might be a great feeling, but for me I knew something was&nbsp;missing - the drive to excel.&nbsp;</div><div class="p2"><br /></div><div class="p1">At TW all the people around me are extraordinary - not because they come from best of the schools or&nbsp;achieved&nbsp;top grades - it was because they are extremely passionate about what they are doing.&nbsp;They are passionate about writing good code, about technology and about having serious fun :D&nbsp;</div><div class="p1"><br /></div><table cellpadding="0" cellspacing="0" class="tr-caption-container" style="float: left; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-ash4/400798_10152203731790438_1106490818_n.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="240" src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-ash4/400798_10152203731790438_1106490818_n.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><span style="font-size: xx-small;">Bowling Night</span></td></tr></tbody></table><div class="p1">And they&#8217;ve passed it onto me - without much of an effort - I just know that I have never been as passionate about CS as I am now. How glad am I that I did choose TW eventually!&nbsp;</div><div class="p1"><br /></div><div class="p1">To quantify my passion - I am, for the first time ever, annoyed that it is a weekend! Oh weekday hope thy never end! :)&nbsp;</div><div class="p1"><br /></div><div class="p1">Yes, I&#8217;ve used &#8216;passion&#8217; more times than is even allowed by&nbsp;Repetitio,&nbsp;but well what was the post again?&nbsp;</div><div class="p1"><br /></div><div class="p1"><br /></div><div class="p1"><br /></div><div class="p1"><br /></div></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My First Mantra (Boredom = Null)]]></title>
-    <link href="http://Sannidhi.github.io/blog/2012/10/14/my-first-mantra/"/>
-    <updated>2012-10-14T00:00:00-07:00</updated>
-    <id>http://Sannidhi.github.io/blog/2012/10/14/my-first-mantra</id>
-    <content type="html"><![CDATA[<div class='post'>
-<div><i>(Dear Blog: You are my first, be forgiving!)&nbsp;</i></div><div></div>After a lot of discussion with family, friends and many more with myself, I had decided to take up the offer at ThoughtWorks Inc. (My First Job! Fingers crossed! :)) I had to attend a mandatory training &#8220;TWU&#8221; for 6 weeks in Bangalore, India that meant going away from my fiance (<i>cry</i>).<br /><div><br /></div><div>Fast forward the long flight and here I was - India! :( :) &nbsp;</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://farm8.staticflickr.com/7232/7053327229_39e9f6b8d6_m.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="213" src="http://farm8.staticflickr.com/7232/7053327229_39e9f6b8d6_m.jpg" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><span style="font-size: xx-small;">Courtesy: flickr/andrewkjones</span></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div>The first day, Fri Oct 5, 2012, I met so many people who had come from all over the world - Australia, China, India, South Africa, UK, USA! We played a few games - mind ball game and treasure hunting - I got to interact with many of the other TWU&#8217;ers. It was cool :) &nbsp;</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div>My introductory one-on-one with my coach Scott and I learnt my first important lesson:&nbsp;</div><div><b><br /></b></div><div><b>Never get bored&nbsp;</b></div><div><b><br /></b></div><div>There are infinite things you can do in your lifetime (play, read, jog, code..) and if you are getting bored - well how does that happen again?&nbsp;</div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div><br /></div><div></div></div>
 ]]></content>
   </entry>
   
