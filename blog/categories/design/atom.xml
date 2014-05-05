@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Design | Binary Musings]]></title>
+  <link href="http://Sannidhi.github.io/blog/categories/design/atom.xml" rel="self"/>
+  <link href="http://Sannidhi.github.io/"/>
+  <updated>2014-05-04T22:29:35-07:00</updated>
+  <id>http://Sannidhi.github.io/</id>
+  <author>
+    <name><![CDATA[Sannidhi]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Non-Designers Design Learnings]]></title>
+    <link href="http://Sannidhi.github.io/blog/2014/05/04/non-designers-design-learnings/"/>
+    <updated>2014-05-04T22:24:07-07:00</updated>
+    <id>http://Sannidhi.github.io/blog/2014/05/04/non-designers-design-learnings</id>
+    <content type="html"><![CDATA[<p>On a recent project I had to take on a role of a full stack developer, which meant I&rsquo;d be doing serious front-end stuff for the first time (<em>Omg</em>) I was not particularly fond of it mainly because it reminded me of my days in school  where I was trying to be this guy</p>
+
+<p><img src="http://i.imgur.com/rRkZAiR.gif" alt="Family Guy Trying to Open Blinds" /></p>
+
+<p>It didn&rsquo;t make it easier when during code review, my pair said &ldquo;the button looks different in Chrome and Firefox&rdquo; I had no idea what he was talking about. They looked the same to me!</p>
+
+<p>Thankfully my pair was an experienced UI designer and suggested I read ‘The Non-Designers design book’ by Robin Williams. In this post I want to share what I learnt in the process.</p>
+
+<h3>CRAP principle</h3>
+
+<h4>Contrast</h4>
+
+<p>Robin says &ldquo;Don&rsquo;t be a wimp. If you are adding contrast do it strong&rdquo;. If two items are not the same then make them different i.e. use contrast to grab attention. Ex:</p>
+
+<ul>
+<li> Get rid of Times New Roman and Arial/Helvetica or San Serif from font choices</li>
+<li> Do not center align all elements</li>
+<li> Emphasize on the most important items on a page and group them logically together so that reader doesn&rsquo;t lose focus</li>
+<li> It is okay to add space to bring items together or to set them apart</li>
+<li> Contrast main items with tricks like bold them on a theme, color etc</li>
+</ul>
+
+
+<h4>Repetition</h4>
+
+<p>This concept is used to unify elements on your page and add visual  interest.</p>
+
+<ul>
+<li>Small elements like fonts, header styles, footer or bullet styles should be consistent.</li>
+<li>Adding repetition always shows authority so try to pull out pieces which can be pulled out and repeated throughout. They need not be repeated in the same form.</li>
+<li>Ex: A home page which has a big image of an elephant could have rest of the pages have tiny elephant images on rest of the pages.</li>
+<li>Another advantage of using repetition is to avoid distraction when elements on the page are too varied.</li>
+</ul>
+
+
+<h3>Alignment</h3>
+
+<p>Don&rsquo;t be afraid to move away from center alignment. Always find other elements on the page that can be used as a reference to align the elements you are adding. Avoid putting too many types of alignments on the same page.</p>
+
+<h4>Proximity</h4>
+
+<p>Elements on a page should be grouped together if they are related to each other. Elements not related should not be placed next to one another.
+Ex: For a business card, elements like contact details should be grouped together and not all over the place. Similarly for a menu card or contact details on website etc.</p>
+
+<h3>Different forms of type</h3>
+
+<ol>
+<li>Concord &ndash; Same type face used all over the page and the elements have same qualities of that type. It is a solid useful concept.</li>
+<li>Conflict &ndash; Two or more types which are similar but neither same nor different. This should be avoided as it will make the page look crowded and disoriented.</li>
+<li>Contrast &ndash; Types which are totally different from each other. Such designs generally attract attention and are visually appealing.</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
