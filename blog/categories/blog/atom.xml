@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Blog | Binary Musings]]></title>
+  <link href="http://Sannidhi.github.io/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://Sannidhi.github.io/"/>
+  <updated>2014-07-18T11:54:15-07:00</updated>
+  <id>http://Sannidhi.github.io/</id>
+  <author>
+    <name><![CDATA[Sannidhi]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Blogging Using Octopress]]></title>
+    <link href="http://Sannidhi.github.io/blog/2014/07/18/blogging-using-octopress/"/>
+    <updated>2014-07-18T11:51:58-07:00</updated>
+    <id>http://Sannidhi.github.io/blog/2014/07/18/blogging-using-octopress</id>
+    <content type="html"><![CDATA[<h3>Creating a new post</h3>
+
+<p><code>
+cd blog_directory/source/_posts
+bundle exec rake new_post['Title of your post']
+open Title_of_your_post
+bundle exec rake generate
+bundle exec rake preview # localhost:4000
+bundle exec rake deploy
+</code></p>
+
+<p><code>bundle exec rake -T # shows all the rake tasks</code></p>
+
+<h3>Edit an existing post</h3>
+
+<ul>
+<li>I added the  <a href="https://gist.github.com/Sannidhi/aaacd6b71bb9802e5a82">code found here</a> to the rake file found at blog_directory/Rakefile.</li>
+<li><p>To edit a post use the following command. If not arguments are given to edit_post it will open the last deployed post.</p>
+
+<p>  <code>EDITOR=mou bundle exec rake edit_post["Post to be edited"]</code></p></li>
+<li><p>After editing I deployed it using <code>bundle exec rake gen_deploy</code></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

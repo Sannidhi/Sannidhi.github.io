@@ -9,7 +9,16 @@
   <meta name="author" content="Sannidhi">
 
   
-  <meta name="description" content="On a recent project I had to take on a role of a full stack developer, which meant I&rsquo;d be doing serious front-end stuff for the first time (Omg &hellip;">
+  <meta name="description" content="Creating a new post 1
+2
+3
+4
+5
+6
+cd blog_directory/source/_posts
+bundle exec rake new_post['Title of your post']
+open Title_of_your_post
+bundle exec &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -63,6 +72,69 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/18/blogging-using-octopress/">Blogging Using Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-18T11:51:58-07:00" pubdate data-updated="true">Jul 18<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Creating a new post</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd blog_directory/source/_posts
+</span><span class='line'>bundle exec rake new_post['Title of your post']
+</span><span class='line'>open Title_of_your_post
+</span><span class='line'>bundle exec rake generate
+</span><span class='line'>bundle exec rake preview # localhost:4000
+</span><span class='line'>bundle exec rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>bundle exec rake -T # shows all the rake tasks</code></p>
+
+<h3>Edit an existing post</h3>
+
+<ul>
+<li>I added the  <a href="https://gist.github.com/Sannidhi/aaacd6b71bb9802e5a82">code found here</a> to the rake file found at blog_directory/Rakefile.</li>
+<li><p>To edit a post use the following command. If not arguments are given to edit_post it will open the last deployed post.</p>
+
+<p>  <code>EDITOR=mou bundle exec rake edit_post["Post to be edited"]</code></p></li>
+<li><p>After editing I deployed it using <code>bundle exec rake gen_deploy</code></p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -480,58 +552,9 @@ My first brush with Test Driven Development (TDD) methodology is at ThoughtWorks
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/15/the-really-simple-rules-for-great-design/">The Really Simple Rules for a Great Design</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-15T00:00:00-07:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">After learning best practices of good design, I have a compulsive need for my code to be aesthetic. I have started abiding by these set of rules and the code looks better, is easier to understand and the best part is it comes effortlessly after you get the hang of it. For every little program I go over these simple rules:<br><br>
-<ul>
-<li>
-<b>It should pass all tests </b>- This is to make sure my program does what its intention is. If I am refactoring legacy code, then I will start by writing tests around the part I am trying to refactor.
-</li>
-<li>
-<b>It should reveal all intentions</b> - Does my &#8216;add&#8217; method do exactly and only that? Add?
-</li>
-<li>
-<b>No duplication</b> - Basic rule of DRY.
-</li>
-<li>
-<b>Fewest number of classes and methods</b> - I closely relate this to another rule &#8220;YAGNI&#8221; an acronym for &#8216;You aren&#8217;t gonna need it&#8217;. Cluttering the code with far too many classes will make it difficult to maintain.
-</li>
-</ul>
-
-This list is not exhaustive and there are many more factors like domain specific modeling etc that go into making a good design. However, these are the basic ones I put on my checklist.</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -542,6 +565,10 @@ This list is not exhaustive and there are many more factors like domain specific
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/18/blogging-using-octopress/">Blogging Using Octopress</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/05/04/non-designers-design-learnings/">Non-Designers Design Learnings</a>
@@ -557,10 +584,6 @@ This list is not exhaustive and there are many more factors like domain specific
     
       <li class="post">
         <a href="/blog/2013/01/28/developer-resolutions-for-2013/">Developer Resolutions for 2013</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/20/set-up-continuous-integration-server/">Set Up a Continuous Integration Server</a>
       </li>
     
   </ul>

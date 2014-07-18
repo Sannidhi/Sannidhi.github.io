@@ -5,11 +5,20 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Memory Leaks in Data Structures - Binary Musings</title>
+  <title>Blogging Using Octopress - Binary Musings</title>
   <meta name="author" content="Sannidhi">
 
   
-  <meta name="description" content="Problem For an array based implementation of a stack, the stack will be &lsquo;expanded&rsquo; usually by doubling the size of an array when the &hellip;">
+  <meta name="description" content="Creating a new post 1
+2
+3
+4
+5
+6
+cd blog_directory/source/_posts
+bundle exec rake new_post['Title of your post']
+open Title_of_your_post
+bundle exec &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +27,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://Sannidhi.github.io/blog/2014/02/16/memory-leaks-in-data-structures">
+  <link rel="canonical" href="http://Sannidhi.github.io/blog/2014/07/18/blogging-using-octopress">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Binary Musings" type="application/atom+xml">
@@ -66,7 +75,7 @@
   
   <header>
     
-      <h1 class="entry-title">Memory Leaks in Data Structures</h1>
+      <h1 class="entry-title">Blogging Using Octopress</h1>
     
     
       <p class="meta">
@@ -82,22 +91,41 @@
   
 
 
-<time datetime="2014-02-16T00:27:38-08:00" pubdate data-updated="true">Feb 16<span>th</span>, 2014</time>
+<time datetime="2014-07-18T11:51:58-07:00" pubdate data-updated="true">Jul 18<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h3>Problem</h3>
+<div class="entry-content"><h3>Creating a new post</h3>
 
-<p>For an array based implementation of a stack, the stack will be &lsquo;expanded&rsquo; usually by doubling the size of an array when the stack is about to get full. When elements are popped out of the stack, the garbage collector should collect the space used by the objects popped. However, there exists an &lsquo;obsolete reference&rsquo; from the stack to ALL the elements even when they are popped. As a result, the garbage collector never cleans this memory. This scenario is called a memory leak.</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd blog_directory/source/_posts
+</span><span class='line'>bundle exec rake new_post['Title of your post']
+</span><span class='line'>open Title_of_your_post
+</span><span class='line'>bundle exec rake generate
+</span><span class='line'>bundle exec rake preview # localhost:4000
+</span><span class='line'>bundle exec rake deploy</span></code></pre></td></tr></table></div></figure>
 
-<h3>Solution</h3>
 
-<p>When there is a scenario where memory is being user-manipulated in the code, the obsolete references if any should be identified and terminated. For example, in the above example making the popped object = null, will make sure all the references are removed and memory is freed.</p>
+<p><code>bundle exec rake -T # shows all the rake tasks</code></p>
 
-<p>Sometimes objects can be forgotten in the cache or ignored and they will never get garbage collected causing memory leaks. A solution is to use a WeakHashMap which checks for &lsquo;keys&rsquo; not accessed for a long time and removes them.</p>
+<h3>Edit an existing post</h3>
+
+<ul>
+<li>I added the  <a href="https://gist.github.com/Sannidhi/aaacd6b71bb9802e5a82">code found here</a> to the rake file found at blog_directory/Rakefile.</li>
+<li><p>To edit a post use the following command. If not arguments are given to edit_post it will open the last deployed post.</p>
+
+<p>  <code>EDITOR=mou bundle exec rake edit_post["Post to be edited"]</code></p></li>
+<li><p>After editing I deployed it using <code>bundle exec rake gen_deploy</code></p></li>
+</ul>
+
 </div>
 
 
@@ -120,12 +148,12 @@
   
 
 
-<time datetime="2014-02-16T00:27:38-08:00" pubdate data-updated="true">Feb 16<span>th</span>, 2014</time>
+<time datetime="2014-07-18T11:51:58-07:00" pubdate data-updated="true">Jul 18<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/java/'>Java</a>
+    <a class='category' href='/blog/categories/blog/'>Blog</a>
   
 </span>
 
@@ -134,7 +162,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://Sannidhi.github.io/blog/2014/02/16/memory-leaks-in-data-structures/" data-via="" data-counturl="http://Sannidhi.github.io/blog/2014/02/16/memory-leaks-in-data-structures/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://Sannidhi.github.io/blog/2014/07/18/blogging-using-octopress/" data-via="" data-counturl="http://Sannidhi.github.io/blog/2014/07/18/blogging-using-octopress/" >Tweet</a>
   
   
   
@@ -143,10 +171,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/02/16/why-not-to-use-finalizers/" title="Previous Post: Why not to use Finalizers">&laquo; Why not to use Finalizers</a>
+        <a class="basic-alignment left" href="/blog/2014/05/04/non-designers-design-learnings/" title="Previous Post: Non-Designers Design Learnings">&laquo; Non-Designers Design Learnings</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/05/04/non-designers-design-learnings/" title="Next Post: Non-Designers Design Learnings">Non-Designers Design Learnings &raquo;</a>
       
     </p>
   </footer>
